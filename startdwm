@@ -1,0 +1,11 @@
+#!/bin/sh
+
+#sh ~/.fehbg &
+while true; do
+  xsetroot -name "$(date "+%a %_d, %h  %H:%M")"
+  sleep 1m
+done &
+
+while true; do
+  dwm || exit
+done
