@@ -66,7 +66,7 @@ if has('gui_running')
   " colo idleFingers
   colo railscasts
 else
-  colo desertEx
+  " colo desertEx
 end
 
 " Only do this part when compiled with support for autocommands
@@ -78,6 +78,24 @@ if has("autocmd")
   autocmd FileType Gemfile setfiletype ruby
   autocmd BufNewFile,BufRead Gemfile setfiletype ruby
    
-  " Treat .rss files as XML
+  " Treat .rss as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
+
+  " Set QML filetype
+  autocmd BufNewFile,BufRead *.qml setfiletype qml
+
+  " Set jst/ejs filetype
+  autocmd BufNewFile,BufRead *.ejs setfiletype jst
+  autocmd BufNewFile,BufRead *.jst setfiletype jst
+
+  " Set scala filetype
+  " autocmd BufNewFile,BufRead *.scala setfiletype scala
+
+  " Set tab to 4 spaces in .py/.c/.h/.cpp/.go/.php files
+  autocmd BufNewFile,BufRead *.py set ts=4 sts=4 sw=4 expandtab smarttab
+  autocmd BufNewFile,BufRead *.c set ts=4 sts=4 sw=4 expandtab smarttab
+  autocmd BufNewFile,BufRead *.h set ts=4 sts=4 sw=4 expandtab smarttab
+  autocmd BufNewFile,BufRead *.cpp set ts=4 sts=4 sw=4 expandtab smarttab
+  autocmd BufNewFile,BufRead *.go set ts=4 sts=4 sw=4 expandtab smarttab
+  autocmd BufNewFile,BufRead *.php set ts=4 sts=4 sw=4 expandtab smarttab
 endif
