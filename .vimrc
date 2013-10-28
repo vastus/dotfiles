@@ -8,7 +8,10 @@ set hidden
 "set cpoptions+=$
 set listchars=tab:▸\ ,eol:¬
 
-" tabs
+" show tabline
+set showtabline=2
+
+" tabbing
 set tabstop=2
 set shiftwidth=2
 set expandtab
