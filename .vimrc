@@ -11,7 +11,7 @@ set listchars=tab:▸\ ,eol:¬
 " show tabline
 set showtabline=2
 
-" tabbing
+" tabs
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -101,4 +101,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.cpp set ts=4 sts=4 sw=4 expandtab smarttab
   autocmd BufNewFile,BufRead *.go set ts=4 sts=4 sw=4 expandtab smarttab
   autocmd BufNewFile,BufRead *.php set ts=4 sts=4 sw=4 expandtab smarttab
+  autocmd BufNewFile,BufRead *.js set ts=4 sts=4 sw=4 expandtab smarttab
+  autocmd BufNewFile,BufRead *.jade set ts=2 sts=2 sw=2 expandtab smarttab
+  autocmd BufNewFile,BufRead *.java set ts=4 sts=4 sw=4 expandtab smarttab
 endif
