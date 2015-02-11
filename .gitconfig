@@ -1,5 +1,5 @@
 [user]
-	name = Juho H.
+	name = Juho Hautala
 	email = juho.hautala@helsinki.fi
 
 [alias]
@@ -7,6 +7,7 @@
   ci = commit
   co = checkout
   lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+  b  = branch
 
 [color]
   branch = auto
@@ -30,7 +31,7 @@
   untracked = cyan
 
 [push]
-  default = matching
+	default = current
 
 [filter "media"]
 	clean = git-media-clean %f
