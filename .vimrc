@@ -4,7 +4,13 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" go
 Plugin 'fatih/vim-go'
+let g:go_fmt_command = "goimports"
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <Leader>i <Plug>(go-info)
+
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'mattn/emmet-vim'
 
@@ -212,6 +218,9 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.java set ts=4 sts=4 sw=4 expandtab smarttab
   autocmd BufNewFile,BufRead *.rs set ts=4 sts=4 sw=4 expandtab smarttab
   autocmd BufNewFile,BufRead *.d set ts=4 sts=4 sw=4 expandtab smarttab
+
+  " Remember cursor position
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
 au FileType javascript setl conceallevel=2 concealcursor=nc
