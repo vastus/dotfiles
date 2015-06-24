@@ -13,6 +13,7 @@ au FileType go nmap <Leader>i <Plug>(go-info)
 
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'mattn/emmet-vim'
+Plugin 'ngmy/vim-rubocop'
 
 " vundleception
 Plugin 'gmarik/Vundle.vim'
@@ -106,6 +107,8 @@ set mouse=a
 set hidden
 "set cpoptions+=$
 set listchars=tab:▸\ ,eol:¬
+" allow backspace
+set backspace=indent,eol,start
 
 " text width
 set tw=78
