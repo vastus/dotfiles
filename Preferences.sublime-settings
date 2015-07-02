@@ -1,0 +1,19 @@
+{
+  "bold_folder_labels": true,
+  "detect_indentation": true,
+  "ensure_newline_at_eof_on_save": true,
+  "highlight_line": true,
+  "ignored_packages":
+  [
+  ],
+  "line_padding_bottom": 1,
+  "line_padding_top": 1,
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
+  "trim_trailing_white_space_on_save": true,
+  "use_tab_stops": true,
+  "vintage_start_in_command_mode": true,
+  "folder_exclude_patterns": ["node_modules", ".git", ".sass-cache"],
+  "file_exclude_patterns": []
+}
+
