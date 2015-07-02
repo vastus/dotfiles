@@ -1,6 +1,6 @@
 [user]
-	name = Juho Hautala
-	email = juho.hautala@helsinki.fi
+  name = Juho Hautala
+  email = juho.hautala@helsinki.fi
 
 [alias]
   st = status
@@ -31,11 +31,11 @@
   untracked = cyan
 
 [push]
-	default = current
+  default = current
 
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
 
 [core]
   editor = /usr/local/bin/vim
