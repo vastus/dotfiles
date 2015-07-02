@@ -1,5 +1,5 @@
 # status
-PS1="[\W] \$ "
+PS1="[\W]\$(__git_ps1) \$ "
 
 # env
 export PGDATA=/usr/local/var/postgres
@@ -25,4 +25,9 @@ eval "$(rbenv init -)"
 
 # direnv
 eval "$(direnv hook bash)"
+
+# git
+if [ -f $HOME/.git-prompt.sh ]; then
+  source $HOME/.git-prompt.sh
+fi
 
