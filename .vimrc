@@ -58,7 +58,7 @@ syntax on
 set mouse=a
 set hidden
 "set cpoptions+=$
-set listchars=tab:▸\ ,eol:¬
+"set listchars=tab:▸\ ,eol:¬
 " allow backspace
 set backspace=indent,eol,start
 
