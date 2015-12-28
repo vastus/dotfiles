@@ -4,25 +4,13 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" go
-Plugin 'fatih/vim-go'
-let g:go_fmt_command = "goimports"
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <Leader>i <Plug>(go-info)
-
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'mattn/emmet-vim'
-Plugin 'ngmy/vim-rubocop'
-
 " vundleception
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'mattn/emmet-vim'
+
 " pasting n stuff - yopo
 Plugin 'tpope/vim-unimpaired'
-
-" git
-" Plugin 'tpope/vim-fugitive'
 
 " parens/braces/apostrophes
 Plugin 'tpope/vim-surround'
@@ -35,22 +23,6 @@ Plugin 'tpope/vim-repeat'
 
 " commenting
 Plugin 'vim-scripts/tComment'
-
-" coffee script
-Plugin 'kchmck/vim-coffee-script'
-
-" status/tabline
-"Plugin 'bling/vim-airline'
-" enable it from the get go
-"set laststatus=2
-" enable powerline fonts
-"let g:airline_powerline_fonts = 1
-" set theme
-"let g:airline_theme='bubblegum'
-"let g:airline_left_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_section_x = ''
-" /bling/vim-airline
 
 " html5 - indent/syntax
 Plugin 'othree/html5.vim'
@@ -67,24 +39,6 @@ Plugin 'mxw/vim-jsx'
 " conceal
 Plugin 'calebsmith/vim-lambdify'
 
-" slim syntax
-Plugin 'slim-template/vim-slim.git'
-
-" completion
-" Plugin 'Valloric/YouCompleteMe'
-
-" ultisnips
-" Plugin 'SirVer/ultisnips'
-" Snippets are separated from the engine. Add this if you want them:
-"Plugin 'honza/vim-snippets'
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-" let g:UltiSnipsExpandTrigger="<c-j>"
-" let g:UltiSnipsJumpForwardTrigger="<c-b>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-" If you want :UltiSnipsEdit to split your window.
-" let g:UltiSnipsEditSplit="vertical"
-" /ultisnips
-
 call vundle#end()            " required, All of your Plugins must be added before the following line
 filetype plugin indent on    " required, To ignore plugin indent changes, instead use: filetype plugin on
 " Brief help
@@ -95,8 +49,6 @@ filetype plugin indent on    " required, To ignore plugin indent changes, instea
 "
 " see :h vundle for more details or wiki for FAQ
 " /Vundle
-
-" call pathogen#infect()
 
 set exrc
 set nowrap
