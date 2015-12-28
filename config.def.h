@@ -6,7 +6,7 @@ static const char font[]            = "-*-clean-*-*-*-*-*-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#cccccc";
 static const char normbgcolor[]     = "#000000";
 static const char normfgcolor[]     = "#7e8aa2";
-static const char selbordercolor[]  = "#0066ff";
+static const char selbordercolor[]  = "#0066cc";
 static const char selbgcolor[]      = "#000000";
 static const char selfgcolor[]      = "#a1b0cf";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -15,13 +15,16 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "webo", "mail","code", "term", "irssi", "misc" };
 
 static const Rule rules[] = {
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
-	{ "MPlayer",  NULL,       NULL,       0,            True,        -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1 },
+	/* class         instance    title       tags mask     isfloating   monitor */
+	{ "Gimp",        NULL,       NULL,       0,            True,        -1 },
+	{ "MPlayer",     NULL,       NULL,       0,            True,        -1 },
+	{ "Firefox",     NULL,       NULL,       1,            True,        -1 },
+	{ "Thunderbird", NULL,       NULL,       1 << 1,       True,        -1 },
+	{ "NetBeans",    NULL,       NULL,       1 << 2,       True,        -1 },
+	{ NULL,          NULL,       "irssi",    1 << 4,       False,       -1 },
 };
 
 /* layout(s) */
@@ -40,7 +43,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
