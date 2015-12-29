@@ -8,5 +8,11 @@ wmname LG3D &
 firefox &
 thunderbird &
 
+# source .Xmodmap if present
+if [ -s ~/.Xmodmap ]; then
+  # for apple keyboard
+  xmodmap ~/.Xmodmap &
+fi
+
 # start dwm
 exec startdwm
