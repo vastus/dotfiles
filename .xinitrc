@@ -17,5 +17,7 @@ fi
 # make caps lock behave like control
 setxkbmap -option ctrl:nocaps &
 
+xinput set-button-map 11 1 2 3 5 4 7 8 9 10 11 12 13 &
+
 # start dwm
 exec startdwm
