@@ -14,5 +14,8 @@ if [ -s ~/.Xmodmap ]; then
   xmodmap ~/.Xmodmap &
 fi
 
+# make caps lock behave like control
+setxkbmap -option ctrl:nocaps &
+
 # start dwm
 exec startdwm
