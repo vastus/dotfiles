@@ -134,7 +134,7 @@ set pastetoggle=<F2>
 set showmode
 
 " nerdtree
-map ,n :NERDTree<CR>
+" map <C-n> :NERDTreeToggle<CR>
 
 " no need for .gvimrc :)
 if has('gui_running')
