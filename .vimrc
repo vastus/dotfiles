@@ -7,6 +7,7 @@ call vundle#begin()
 " vundleception
 Plugin 'gmarik/Vundle.vim'
 
+" emmet for html
 Plugin 'mattn/emmet-vim'
 
 " pasting n stuff - yopo
@@ -38,6 +39,22 @@ Plugin 'mxw/vim-jsx'
 
 " conceal
 Plugin 'calebsmith/vim-lambdify'
+
+" editorconfig
+Plugin 'editorconfig/editorconfig-vim'
+
+" coffee + cjsx
+Plugin 'mtscout6/vim-cjsx'
+Plugin 'kchmck/vim-coffee-script'
+
+" nerdtree
+Plugin 'scrooloose/nerdtree'
+
+" slim
+Plugin 'slim-template/vim-slim.git'
+
+" golang
+Plugin 'fatih/vim-go'
 
 call vundle#end()            " required, All of your Plugins must be added before the following line
 filetype plugin indent on    " required, To ignore plugin indent changes, instead use: filetype plugin on
