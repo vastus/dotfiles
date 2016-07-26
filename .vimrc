@@ -198,3 +198,12 @@ endif
 au FileType javascript setl conceallevel=2 concealcursor=nc
 let g:syntax_js=['function']
 
+"
+" Plugin specific confs
+"
+
+" vim-go
+let g:go_fmt_command = "goimports"
+
+" editorconfig-vim
+let g:EditorConfig_max_line_indicator = "none"
