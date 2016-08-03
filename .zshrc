@@ -17,4 +17,7 @@ compinit
 export PS1='[%c] %# '
 
 # alias
-alias ls='ls --classify --color=auto'
+alias ls='ls -FG'
+alias ack='ack --ignore-dir node_modules/ --ignore-dir coverage/ --ignore-dir log/'
+alias e='emacs'
+alias updatedb='/usr/libexec/locate.updatedb'
