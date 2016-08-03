@@ -21,3 +21,20 @@ alias ls='ls -FG'
 alias ack='ack --ignore-dir node_modules/ --ignore-dir coverage/ --ignore-dir log/'
 alias e='emacs'
 alias updatedb='/usr/libexec/locate.updatedb'
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# direnv
+eval "$(direnv hook zsh)"
+
+# prompt
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+# RPROMPT=\$vcs_info_msg_0_ # on the right side
+PROMPT='[%c]'\$vcs_info_msg_0_' %# '
+# PROMPT='[%c] ('\$vcs_info_msg_0_') %# '
+zstyle '(:vcs_info:git:*)' formats ' (%b)'
