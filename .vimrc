@@ -56,6 +56,16 @@ Plugin 'slim-template/vim-slim.git'
 " golang
 Plugin 'fatih/vim-go'
 
+" parinfer
+Plugin 'bhurlow/vim-parinfer'
+
+" ack
+Plugin 'mileszs/ack.vim'
+
+if executable('ack')
+  let g:ackprg = 'ag -s -H --nopager --nocolor --nogroup --column --ignore-dir node_modules/ --ignore-dir coverage/ --ignore-dir log/ --ignore-dir tmp/'
+endif
+
 call vundle#end()            " required, All of your Plugins must be added before the following line
 filetype plugin indent on    " required, To ignore plugin indent changes, instead use: filetype plugin on
 " Brief help
@@ -100,7 +110,11 @@ set smartcase
 " leader
 let mapleader = ','
 
-" mappings
+"
+" key mappings
+"
+
+" toggle hilight search
 nnoremap <silent> <space> :set hlsearch! hlsearch?<CR>
 
 " show list chars
@@ -128,6 +142,16 @@ nmap ,j <C-W>j
 nmap ,k <C-W>k
 nmap ,l <C-W>l
 
+" copy current buffer name to clipboard
+nmap <C-k><C-f> :!echo % \| pbcopy<CR><CR>
+
+" copy current buffer contents to clipboard
+nmap <C-k><C-l> :!cat % \| pbcopy<CR><CR>
+
+" create a file named after what's under the cursor
+" careful... overwrites a file if exists
+" map <silent> <leader>cf :call writefile([], expand("<cfile>"), "t")<cr>
+
 " toggle pasting with info
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
@@ -135,6 +159,10 @@ set showmode
 
 " nerdtree
 " map <C-n> :NERDTreeToggle<CR>
+nmap <C-k><C-b> :NERDTreeToggle<CR>
+
+" ctags
+nnoremap <leader>g <C-]>
 
 " no need for .gvimrc :)
 if has('gui_running')
