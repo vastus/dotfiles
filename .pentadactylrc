@@ -1,11 +1,10 @@
 " vim: set ft=vim :
 
-loadplugins '\.(js|penta)$'
-group user
-set cdpath=''
-set defsearch=duckduckgo
 
+"
 " mappings
+"
+
 " move tab back one position
 " wrap movement around end with !
 map <c-b> :tabmove! -1<cr>
@@ -13,3 +12,20 @@ map <c-b> :tabmove! -1<cr>
 " move tab forward one position
 " wrap movement around start with !
 map <c-f> :tabmove! +1<cr>
+
+
+"
+" styles
+"
+
+hi -link=FontFixed CmdLine padding: 1px !important; font-size: 14px; font-weight: normal;
+
+
+"
+" misc
+"
+
+loadplugins '\.(js|penta)$'
+group user
+set cdpath=''
+set defsearch=duckduckgo
