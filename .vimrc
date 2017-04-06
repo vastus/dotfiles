@@ -25,14 +25,8 @@ Plugin 'tpope/vim-repeat'
 " commenting
 Plugin 'vim-scripts/tComment'
 
-" html5 - indent/syntax
-Plugin 'othree/html5.vim'
-
-" js - syntax/indent (req by jsx)
+" javascript - required by vim-jsx
 Plugin 'pangloss/vim-javascript'
-
-" js - syntax
-"Plugin 'drslump/vim-syntax-js'
 
 " jsx - hilite/syntax
 Plugin 'mxw/vim-jsx'
@@ -43,28 +37,11 @@ Plugin 'calebsmith/vim-lambdify'
 " editorconfig
 Plugin 'editorconfig/editorconfig-vim'
 
-" coffee + cjsx
-Plugin 'mtscout6/vim-cjsx'
-Plugin 'kchmck/vim-coffee-script'
-
 " nerdtree
 Plugin 'scrooloose/nerdtree'
 
-" slim
-Plugin 'slim-template/vim-slim.git'
-
-" golang
-Plugin 'fatih/vim-go'
-
-" parinfer
-Plugin 'bhurlow/vim-parinfer'
-
-" ack
-Plugin 'mileszs/ack.vim'
-
-if executable('ack')
-  let g:ackprg = 'ag -s -H --nopager --nocolor --nogroup --column --ignore-dir node_modules/ --ignore-dir coverage/ --ignore-dir log/ --ignore-dir tmp/'
-endif
+" ctrlp
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()            " required, All of your Plugins must be added before the following line
 filetype plugin indent on    " required, To ignore plugin indent changes, instead use: filetype plugin on
@@ -76,6 +53,13 @@ filetype plugin indent on    " required, To ignore plugin indent changes, instea
 "
 " see :h vundle for more details or wiki for FAQ
 " /Vundle
+
+" ctrlp
+let g:ctrlp_map = ',t'
+nmap ,t :CtrlP<CR>
+
+" vim-jsx
+let g:jsx_ext_required = 0
 
 set exrc
 set nowrap
