@@ -1,0 +1,56 @@
+#!/bin/bash
+
+set -e
+
+function apps {
+  brew tap caskroom/versions
+  brew cask install \
+    iterm2 \
+    firefox \
+    slack \
+    emacs \
+    intellij-idea-ce \
+    spectacle \
+    1password \
+    dropbox \
+    eloston-chromium \
+    freedome \
+    java8 \
+    spotify \
+    docker
+}
+
+function clis {
+  brew install \
+    leiningen
+}
+
+function misc {
+  if [ ! -d ~/.dotfiles ]; then
+    git clone https://github.com/vastus/dotfiles.git ~/.dotfiles
+  fi
+
+  if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    ln -sf ~/.dotfiles/.vimrc ~/.vimrc
+    vim +PluginInstall +qall
+  fi
+
+  if [ $SHELL == "/bin/bash" ]; then
+    chsh -s /bin/zsh
+    ln -sf ~/.dotfiles/.zshrc ~/.zshrc
+  fi
+
+  if [ ! -f ~/Library/KeyBindings/DefaultKeyBinding.dict ]; then
+    if [ ! -d ~/Library/KeyBinginds ]; then mkdir ~/Library/KeyBindings; fi
+    cat > ~/Library/KeyBindings/DefaultKeyBinding.dict <<EOF
+{
+"~ " = ("insertText:", " ");
+}
+EOF
+  fi
+}
+
+apps
+clis
+misc
