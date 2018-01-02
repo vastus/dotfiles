@@ -91,6 +91,10 @@ set incsearch
 set ignorecase
 set smartcase
 
+set bg=light
+set visualbell
+map <C-c> <Esc>
+
 " leader
 let mapleader = ','
 
