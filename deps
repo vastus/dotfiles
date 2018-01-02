@@ -17,7 +17,8 @@ function apps {
     freedome \
     java8 \
     spotify \
-    docker
+    docker \
+    telegram
 }
 
 function clis {
