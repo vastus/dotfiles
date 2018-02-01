@@ -23,8 +23,7 @@ alias e='emacsclient'
 alias updatedb='/usr/libexec/locate.updatedb'
 
 # rbenv
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 
 # direnv
 # eval "$(direnv hook zsh)"
