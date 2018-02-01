@@ -91,6 +91,7 @@ set smartcase
 set bg=light
 set visualbell
 map <C-c> <Esc>
+imap <C-c> <Esc>
 
 " leader
 let mapleader = ','
@@ -110,7 +111,7 @@ nmap <silent> ,ev :e $MYVIMRC<CR>
 nmap <silent> ,sv :so $MYVIMRC<CR>
 
 imap <C-l> <SPACE>=><SPACE>
-imap <C-o> <ESC>o
+imap <C-d> <C-o>x
 
 " swap ^E to ^J
 "      ^Y to ^K
@@ -168,6 +169,10 @@ if has('gui_running')
 else
   " colo desertEx
 end
+
+" SQLComplete
+" https://www.reddit.com/r/vim/comments/2om1ib/how_to_disable_sql_dynamic_completion/
+let g:omni_sql_no_default_maps = 1
 
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
