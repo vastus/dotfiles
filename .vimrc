@@ -31,9 +31,6 @@ Plugin 'pangloss/vim-javascript'
 " jsx - hilite/syntax
 Plugin 'mxw/vim-jsx'
 
-" conceal
-Plugin 'calebsmith/vim-lambdify'
-
 " editorconfig
 Plugin 'editorconfig/editorconfig-vim'
 
