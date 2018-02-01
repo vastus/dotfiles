@@ -28,6 +28,8 @@ eval "$(rbenv init -)"
 # direnv
 eval "$(direnv hook zsh)"
 
+# pg
+export PGDATA="/usr/local/var/postgres"
 
 # prompt
 autoload -Uz vcs_info
