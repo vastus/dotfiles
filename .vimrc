@@ -208,6 +208,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.java set ts=4 sts=4 sw=4 expandtab smarttab
   autocmd BufNewFile,BufRead *.rs set ts=4 sts=4 sw=4 expandtab smarttab
   autocmd BufNewFile,BufRead *.d set ts=4 sts=4 sw=4 expandtab smarttab
+  autocmd BufNewFile,BufRead Makefile set ts=4 sts=4 sw=4 noexpandtab smarttab
 
   " Remember cursor position
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
