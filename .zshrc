@@ -13,6 +13,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# zsh
+zstyle ':completion:*' special-dirs true
+
 # prompt
 export PS1='[%c] %# '
 
