@@ -18,8 +18,8 @@ export PS1='[%c] %# '
 
 # alias
 alias ls='ls -FG'
-alias ack='ack --ignore-dir node_modules/ --ignore-dir coverage/ --ignore-dir log/'
-alias e='emacs'
+alias ack='ack --ignore-dir node_modules/ --ignore-dir coverage/ --ignore-dir log/ --ignore-dir build/'
+alias e='emacsclient'
 alias updatedb='/usr/libexec/locate.updatedb'
 
 # rbenv
