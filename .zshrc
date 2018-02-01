@@ -26,7 +26,8 @@ alias updatedb='/usr/libexec/locate.updatedb'
 eval "$(rbenv init -)"
 
 # direnv
-# eval "$(direnv hook zsh)"
+eval "$(direnv hook zsh)"
+
 
 # prompt
 autoload -Uz vcs_info
