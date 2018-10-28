@@ -178,13 +178,20 @@ if has('gui_running')
   set guioptions-=T
   set guioptions-=m
   set guioptions-=r
-  set guifont=Sauce\ Code\ Powerline:h15
+  " set guifont=Sauce\ Code\ Powerline:h15
+  set guifont=Hasklig:h15
   " Disable all blinking:
-  :set guicursor+=a:blinkon0
-  set showtabline=0
-  colo smyck
+  set guicursor+=a:blinkon0
+  set showtabline=1
+  " colo smyck
   " colo idleFingers
   " colo railscasts
+
+  " zenburn color scheme
+  colorscheme zenburn
+  highlight LineNr guibg=#3f3f3f
+
+  set macligatures
 
   " hilite cursor line
   set cursorline
