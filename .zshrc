@@ -34,6 +34,12 @@ eval "$(direnv hook zsh)"
 # pg
 export PGDATA="/usr/local/var/postgres"
 
+# java
+export JAVA_HOME="/Library/Java/Home"
+
+# iex
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 # common
 export LC_ALL="en_US.UTF-8"
 
