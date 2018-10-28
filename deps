@@ -22,8 +22,12 @@ function apps {
 }
 
 function clis {
+  sudo easy_install pip
+  sudo pip install ansible
   brew install \
-    leiningen
+    leiningen \
+    yarn \
+    awscli
 }
 
 function misc {
