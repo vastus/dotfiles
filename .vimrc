@@ -66,6 +66,10 @@ filetype plugin indent on    " required, To ignore plugin indent changes, instea
 " see :h vundle for more details or wiki for FAQ
 " /Vundle
 
+" enable modeline (e.g. vim: set option=value)
+set modeline
+set modelines=5
+
 " ctrlp
 let g:ctrlp_map = ',t'
 nmap ,t :CtrlP<CR>
