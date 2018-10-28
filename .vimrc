@@ -43,6 +43,18 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " auto pairs
 Plugin 'jiangmiao/auto-pairs'
 
+" solarized dark
+Plugin 'altercation/vim-colors-solarized'
+
+" nginx
+Plugin 'chr4/nginx.vim'
+
+" typescript
+Plugin 'leafgarland/typescript-vim'
+
+" color - zenburn
+Plugin 'jnurmine/Zenburn'
+
 call vundle#end()            " required, All of your Plugins must be added before the following line
 filetype plugin indent on    " required, To ignore plugin indent changes, instead use: filetype plugin on
 " Brief help
