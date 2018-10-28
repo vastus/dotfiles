@@ -34,6 +34,9 @@ eval "$(direnv hook zsh)"
 # pg
 export PGDATA="/usr/local/var/postgres"
 
+# common
+export LC_ALL="en_US.UTF-8"
+
 # prompt
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
