@@ -107,7 +107,10 @@ set incsearch
 set ignorecase
 set smartcase
 
-set bg=light
+" theme
+set background=light
+colorscheme solarized
+
 set visualbell
 map <C-c> <Esc>
 imap <C-c> <Esc>
