@@ -26,10 +26,14 @@ alias e='emacsclient'
 alias updatedb='/usr/libexec/locate.updatedb'
 
 # rbenv
-eval "$(rbenv init -)"
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+fi
 
 # direnv
-eval "$(direnv hook zsh)"
+if which direnv > /dev/null; then
+  eval "$(direnv hook zsh)"
+fi
 
 # pg
 export PGDATA="/usr/local/var/postgres"
