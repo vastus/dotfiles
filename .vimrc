@@ -108,8 +108,8 @@ set ignorecase
 set smartcase
 
 " theme
-set background=light
-colorscheme solarized
+" set background=light
+" colorscheme solarized
 
 set visualbell
 map <C-c> <Esc>
@@ -196,7 +196,7 @@ if has('gui_running')
   " hilite cursor line
   set cursorline
 else
-  " colo desertEx
+  colo desert
 end
 
 " SQLComplete
