@@ -113,6 +113,8 @@ set smartcase
 " theme
 " set background=light
 " colorscheme solarized
+set background=dark
+colorscheme desert
 
 set visualbell
 map <C-c> <Esc>
