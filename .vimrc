@@ -55,6 +55,9 @@ Plugin 'leafgarland/typescript-vim'
 " color - zenburn
 Plugin 'jnurmine/Zenburn'
 
+" python formatter
+Plugin 'ambv/black'
+
 call vundle#end()            " required, All of your Plugins must be added before the following line
 filetype plugin indent on    " required, To ignore plugin indent changes, instead use: filetype plugin on
 " Brief help
