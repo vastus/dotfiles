@@ -246,6 +246,9 @@ if has("autocmd")
 
   " Remember cursor position
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+  " Format python w/ Black
+  autocmd BufWritePre *.py execute ':Black'
 endif
 
 au FileType javascript setl conceallevel=2 concealcursor=nc
