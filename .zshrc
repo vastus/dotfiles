@@ -44,8 +44,21 @@ export JAVA_HOME="/Library/Java/Home"
 # iex
 export ERL_AFLAGS="-kernel shell_history enabled"
 
+# stack
+export PATH="$PATH:$HOME/.local/bin"
+
 # common
 export LC_ALL="en_US.UTF-8"
+
+# pyenv
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# h&m proxy
+if scutil --proxy | grep proxypac.hm.com > /dev/null; then
+  export http_proxy=http://seproxy.hm.com:8080
+  export https_proxy=http://seproxy.hm.com:8080
+fi
 
 # prompt
 autoload -Uz vcs_info
