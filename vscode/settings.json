@@ -1,24 +1,25 @@
 {
-    "editor.fontFamily": "Fira Code",
-    "editor.fontLigatures": true,
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": false,
-    "editor.minimap.enabled": false,
-    "explorer.openEditors.visible": 0,
-    "files.exclude": {
-        ".cache": true,
-        ".vscode": true,
-        "node_modules": true,
-    },
-    "extensions.ignoreRecommendations": false,
-    "explorer.confirmDragAndDrop": false,
-    // js
-    "javascript.format.enable": false,
-    // eslint
-    "eslint.autoFixOnSave": true,
-    // tslint
-    "tslint.autoFixOnSave": true,
-    "explorer.confirmDelete": false,
-    "window.zoomLevel": 0,
-    "editor.fontSize": 13,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": false,
+  "editor.minimap.enabled": false,
+  "explorer.openEditors.visible": 0,
+  "files.exclude": {
+    ".cache": true,
+    ".vscode": true,
+    "node_modules": true
+  },
+  "extensions.ignoreRecommendations": false,
+  "explorer.confirmDragAndDrop": false,
+  // js
+  "javascript.format.enable": false,
+  // eslint
+  "eslint.autoFixOnSave": true,
+  // tslint
+  "tslint.autoFixOnSave": true,
+  "explorer.confirmDelete": false,
+  "window.zoomLevel": 0,
+  "editor.fontSize": 13,
+  "workbench.startupEditor": "welcomePage"
 }
