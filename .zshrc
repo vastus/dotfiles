@@ -8,8 +8,8 @@ fi
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=100000
+SAVEHIST=100000
 setopt autocd nomatch notify
 unsetopt appendhistory beep extendedglob
 bindkey -e
