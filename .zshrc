@@ -1,3 +1,11 @@
+if [ -f $HOME/.alias.linux ]; then
+  source $HOME/.alias.linux
+fi
+
+if [ -f $HOME/.alias.macos ]; then
+  source $HOME/.alias.macos
+fi
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -20,7 +28,6 @@ zstyle ':completion:*' special-dirs true
 export PS1='[%c] %# '
 
 # alias
-alias ls='ls -FG'
 alias ack='ack --ignore-dir node_modules/ --ignore-dir coverage/ --ignore-dir log/ --ignore-dir build/'
 alias e='emacsclient'
 alias updatedb='/usr/libexec/locate.updatedb'
