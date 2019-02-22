@@ -1,6 +1,6 @@
 ! Xft settings ---------------------------------------------------------------
 
-Xft.dpi:        96
+Xft.dpi:        144
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
@@ -8,7 +8,7 @@ Xft.hintstyle:  hintfull
 
 URxvt.visualBell: on
 URxvt.scrollBar: off
-URxvt.font: xft:inconsolata:size=11
+URxvt.font: xft:inconsolata:size=9
 ! URxvt.font: xft:monospace:size=8
 ! URxvt.font: xft:terminusmod:size=8
 ! URxvt.font: -*-terminusmod-medium-r-*-*-14-*-*-*-*-*-*-*
