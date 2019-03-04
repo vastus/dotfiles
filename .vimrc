@@ -61,6 +61,12 @@ Plugin 'ambv/black'
 " yaml
 Plugin 'stephpy/vim-yaml'
 
+" ack
+Plugin 'mileszs/ack.vim'
+
+" dhall
+Plugin 'vmchale/dhall-vim'
+
 call vundle#end()            " required, All of your Plugins must be added before the following line
 filetype plugin indent on    " required, To ignore plugin indent changes, instead use: filetype plugin on
 " Brief help
