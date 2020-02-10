@@ -89,10 +89,12 @@ nmap ,t :CtrlP<CR>
 " vim-jsx
 let g:jsx_ext_required = 0
 
+" relative line numbers
+set number relativenumber
+
 set exrc
 set nowrap
 set wildmenu
-set nu
 syntax on
 set mouse=a
 set hidden
