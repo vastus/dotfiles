@@ -33,12 +33,12 @@ alias e='emacsclient'
 alias updatedb='/usr/libexec/locate.updatedb'
 
 # rbenv
-if which rbenv > /dev/null; then
+if which rbenv >/dev/null 2>&1; then
   eval "$(rbenv init -)"
 fi
 
 # direnv
-if which direnv > /dev/null; then
+if which direnv >/dev/null 2>&1; then
   eval "$(direnv hook zsh)"
 fi
 
@@ -64,7 +64,7 @@ if which pyenv > /dev/null; then
 fi
 
 # h&m proxy
-if which scutil > /dev/null && scutil --proxy | grep proxypac.hm.com > /dev/null; then
+if which scutil >/dev/null 2>&1 && scutil --proxy | grep proxypac.hm.com > /dev/null; then
   export http_proxy=http://seproxy.hm.com:8080
   export https_proxy=http://seproxy.hm.com:8080
 fi
