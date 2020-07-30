@@ -261,7 +261,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.py set ts=4 sts=4 sw=4 expandtab smarttab
   autocmd BufNewFile,BufRead *.c set ts=4 sts=4 sw=4 expandtab smarttab
   autocmd BufNewFile,BufRead *.h set ts=4 sts=4 sw=4 expandtab smarttab
-  autocmd BufNewFile,BufRead *.cpp set ts=2 sts=2 sw=2 expandtab smarttab
+  autocmd BufNewFile,BufRead *.cpp set ts=4 sts=4 sw=4 expandtab smarttab
   autocmd BufNewFile,BufRead *.go set ts=4 sts=4 sw=4 expandtab smarttab
   autocmd BufNewFile,BufRead *.php set ts=4 sts=4 sw=4 expandtab smarttab
   autocmd BufNewFile,BufRead *.js set ts=2 sts=2 sw=2 expandtab smarttab
