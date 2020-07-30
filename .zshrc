@@ -31,6 +31,7 @@ export PS1='[%c] %# '
 alias ack='ack --ignore-dir node_modules/ --ignore-dir coverage/ --ignore-dir log/ --ignore-dir build/'
 alias e='emacsclient'
 alias updatedb='/usr/libexec/locate.updatedb'
+alias ls='ls -FG'
 
 # rbenv
 if which rbenv >/dev/null 2>&1; then
