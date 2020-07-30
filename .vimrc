@@ -73,6 +73,9 @@ Plugin 'chriskempson/base16-vim'
 " show tags in sidebar (needs ctags)
 Plugin 'majutsushi/tagbar'
 
+" git
+Plugin 'tpope/vim-fugitive'
+
 call vundle#end()            " required, All of your Plugins must be added before the following line
 filetype plugin indent on    " required, To ignore plugin indent changes, instead use: filetype plugin on
 " Brief help
