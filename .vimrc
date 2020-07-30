@@ -199,7 +199,7 @@ set showmode
 
 " nerdtree
 " map <C-n> :NERDTreeToggle<CR>
-nmap <C-k><C-b> :NERDTreeToggle<CR>
+nmap <C-k><C-b> :NERDTreeFind<CR>
 
 " ctags
 nnoremap <leader>g <C-]>
