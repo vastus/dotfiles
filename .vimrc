@@ -67,6 +67,9 @@ Plugin 'mileszs/ack.vim'
 " dhall
 Plugin 'vmchale/dhall-vim'
 
+" base16 themes
+Plugin 'chriskempson/base16-vim'
+
 call vundle#end()            " required, All of your Plugins must be added before the following line
 filetype plugin indent on    " required, To ignore plugin indent changes, instead use: filetype plugin on
 " Brief help
@@ -125,7 +128,7 @@ set smartcase
 " set background=light
 " colorscheme solarized
 set background=dark
-colorscheme desert
+colorscheme base16-ocean
 
 set visualbell
 map <C-c> <Esc>
