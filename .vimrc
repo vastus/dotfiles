@@ -139,6 +139,10 @@ set smartcase
 set background=dark
 colorscheme base16-ocean
 
+" swap and backup files
+set directory=$HOME/.vim/swaps//  " yes, double /
+set backupdir=$HOME/.vim/backups//  " yes, double /
+
 set visualbell
 map <C-c> <Esc>
 imap <C-c> <Esc>
