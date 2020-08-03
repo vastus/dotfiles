@@ -137,7 +137,7 @@ set smartcase
 " set background=light
 " colorscheme solarized
 set background=dark
-colorscheme base16-ocean
+silent! colorscheme base16-ocean
 
 " swap and backup files
 set directory=$HOME/.vim/swaps//  " yes, double /
