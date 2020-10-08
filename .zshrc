@@ -53,7 +53,7 @@ export JAVA_HOME="/Library/Java/Home"
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 # stack
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$HOME/.local/bin:$PATH"
 
 # common
 export LC_ALL="en_US.UTF-8"
