@@ -15,6 +15,9 @@ Plug 'tpope/vim-commentary'
 " git
 Plug 'tpope/vim-fugitive'
 
+" nerdtree
+Plug 'preservim/nerdtree'
+
 call plug#end()
 
 
@@ -86,3 +89,35 @@ colorscheme pablo
 
 " commentary
 autocmd FileType cpp setlocal commentstring=//%s
+
+" lsp
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
