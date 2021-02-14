@@ -24,8 +24,9 @@ compinit
 # zsh
 zstyle ':completion:*' special-dirs true
 
-# prompt
+# exports
 export PS1='[%c] %# '
+export EDITOR=vim
 
 # alias
 alias ack='ack --ignore-dir node_modules/ --ignore-dir coverage/ --ignore-dir log/ --ignore-dir build/'
