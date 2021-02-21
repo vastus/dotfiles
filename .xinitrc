@@ -1,23 +1,19 @@
-#!bin/sh
+#!/bin/sh
 
-xrdb -merge ~/.Xresources &
+# wmname LG3D &
+
+# firefox &
+# thunderbird &
+
 setxkbmap -option terminate:ctrl_alt_bksp &
-wmname LG3D &
 
-# startup programs
-firefox &
-thunderbird &
+[[ -r ~/.Xresource ]] && xrdb -merge ~/.Xresources &
 
-# source .Xmodmap if present
-if [ -s ~/.Xmodmap ]; then
-  # for apple keyboard
-  xmodmap ~/.Xmodmap &
-fi
+[[ -r ~/.Xmodmap ]] && xmodmap ~/.Xmodmap &
 
-# make caps lock behave like control
+# bind ctrl to caps lock
 setxkbmap -option ctrl:nocaps &
 
-xinput set-button-map 11 1 2 3 5 4 7 8 9 10 11 12 13 &
+# xinput set-button-map 11 1 2 3 5 4 7 8 9 10 11 12 13 &
 
-# start dwm
-exec startdwm
+exec ssh-agent ~/.local/bin/startdwm
