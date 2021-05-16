@@ -18,6 +18,10 @@ Plug 'tpope/vim-fugitive'
 " nerdtree
 Plug 'preservim/nerdtree'
 
+" fuzzy
+Plug 'junegunn/fzf', { 'do': { -> 'fzf#install()' } }
+Plug 'junegunn/fzf.vim'
+
 call plug#end()
 
 
@@ -27,7 +31,6 @@ call plug#end()
 
 " line numbers
 set number
-set relativenumber
 
 " enable mouse
 set mouse=a
@@ -75,6 +78,8 @@ set exrc
 " enable secure b/c of enabling exrc
 set secure
 
+" fuzzy
+nmap <leader>t :Files<CR>
 
 "
 " ui
