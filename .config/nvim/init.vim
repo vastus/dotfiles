@@ -22,8 +22,13 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> 'fzf#install()' } }
 Plug 'junegunn/fzf.vim'
 
-call plug#end()
+" db
+Plug 'tpope/vim-dadbod'
 
+" repeat e.g. surround
+Plug 'tpope/vim-repeat'
+
+call plug#end()
 
 "
 " settings
