@@ -41,3 +41,5 @@ URxvt.color14: #69EDE1
 URxvt.color7:  #AAAAAA
 URxvt.color15: #CCCCCC 
 
+# extensions
+URxvt.perl-ext-common: default,matcher,clipboard
