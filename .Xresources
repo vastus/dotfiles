@@ -43,3 +43,7 @@ URxvt.color15: #CCCCCC
 
 # extensions
 URxvt.perl-ext-common: default,matcher,clipboard
+
+! clickable URLs
+URxvt.url-launcher: xdg-open
+URxvt.matcher.button: 1
