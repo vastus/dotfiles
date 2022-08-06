@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+cd ~/work/token-terminal/tt-analytics/tt-analytics-api
+
+tmux new-session -s "tt-api" -d
+tmux splitw -h
+tmux splitw -v
+tmux neww "redis-server --port 16379"
+tmux splitw -v psql -d tt_analytics
+tmux neww
+tmux selectw -t 1
+tmux attach -t "tt-api"

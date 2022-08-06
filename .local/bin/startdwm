@@ -2,6 +2,15 @@
 
 # sh ~/.fehbg &
 
+layout() {
+  setxkbmap -query | awk '/layout/ { print $2; }' | tr 'a-z' 'A-Z'
+}
+
+while true; do
+  xsetroot -name " `layout`  `cat /sys/class/power_supply/BAT0/capacity`%  `date '+%a %-d. %b %H:%M'` "
+  sleep 1s
+done &
+
 while true; do
   dwm 2>~/.dwm.log
 done

@@ -1,0 +1,43 @@
+#!/bin/bash
+
+lowbat () {
+  local threshold=15
+  local notifystatusfile="/tmp/lowbat-$$"
+  local notifywait=300 # seconds
+  local cap=
+  local status=
+  local lastnotifyat=
+
+  trap 'rm -f ${notifystatusfile}' SIGTERM EXIT
+
+  while true; do
+    cap=$(cat /sys/class/power_supply/BAT0/capacity)
+    status=$(cat /sys/class/power_supply/BAT0/status)
+
+    echo lowbat $cap $status `date`
+
+    if [[ ${status,,} == "discharging" && $cap -lt ${threshold} ]]; then
+      # if there's only 8% left, suspend
+      [[ $cap -lt 9 ]] && systemctl suspend
+
+      if [[ -f "$notifystatusfile" ]]; then
+        now=$(date +'%s')
+        lastnotifyat=$(cat "$notifystatusfile")
+
+        if (( "$now" - "$lastnotifyat" > ${notifywait} )); then
+          # We've notified more than 5 mins ago, notify
+          notify-send  --wait "Low battery" "The battery capacity is below ${threshold}%"
+          # bump lastnotifyat
+          date +'%s' >"$notifystatusfile"
+        fi
+      else
+        notify-send  --wait "Low battery" "The battery capacity is below ${threshold}%"
+        date +'%s' >"$notifystatusfile"
+      fi
+    fi
+
+    sleep 10
+  done
+}
+
+lowbat
