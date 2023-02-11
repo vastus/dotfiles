@@ -32,7 +32,7 @@ export EDITOR=vim
 alias ack='ack --ignore-dir node_modules/ --ignore-dir coverage/ --ignore-dir log/ --ignore-dir build/'
 alias e='emacsclient'
 alias updatedb='/usr/libexec/locate.updatedb'
-alias ls='ls --color=auto --classify'
+alias ls='ls --color=auto'
 
 # rbenv
 if which rbenv >/dev/null 2>&1; then
