@@ -40,6 +40,11 @@ if which rbenv >/dev/null 2>&1; then
   export PATH="$HOME/.rbenv/bin:$PATH"
 fi
 
+# kubectl completion
+if which kubectl >/dev/null 2>&1; then
+  source <(kubectl completion zsh)
+fi
+
 # direnv
 if which direnv >/dev/null 2>&1; then
   eval "$(direnv hook zsh)"
