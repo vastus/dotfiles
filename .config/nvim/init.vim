@@ -135,3 +135,12 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
+
+" show doc / type of word under cursor
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
