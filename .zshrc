@@ -53,9 +53,6 @@ fi
 # pg
 export PGDATA="/usr/local/var/postgres"
 
-# java
-export JAVA_HOME="/Library/Java/Home"
-
 # iex
 export ERL_AFLAGS="-kernel shell_history enabled"
 
