@@ -62,6 +62,8 @@ export PATH="$HOME/.local/bin:$PATH"
 # common
 export LC_ALL="en_US.UTF-8"
 
+export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/tt-prod-1:$KUBECONFIG"
+
 # pyenv
 if which pyenv > /dev/null; then
   eval "$(pyenv init -)"
