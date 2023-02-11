@@ -28,6 +28,9 @@ Plug 'tpope/vim-dadbod'
 " repeat e.g. surround
 Plug 'tpope/vim-repeat'
 
+" copilot
+Plug 'github/copilot.vim'
+
 call plug#end()
 
 "
