@@ -1,0 +1,83 @@
+#!/bin/bash
+
+set -uo pipefail
+# set -x
+
+function main {
+  local branch_name="$1"
+  local worktree_base_path="${HOME}/work/token-terminal"
+  local worktree_work_path="${HOME}/work/token-terminal/${branch_name}"
+  local commit_ish="origin/main"
+  local worktree_flags=
+  local tmux_session_name="${branch_name}"
+
+  cd "${worktree_base_path}/tt-analytics"
+
+  # get refs
+  git fetch
+
+  # if no worktree already exists
+  if [[ ! -d "${worktree_work_path}" ]]; then
+    # if remote branch exists set commit_ish to remote branch
+    if ! git branch -a | grep -q "origin/${branch_name}"; then
+      commit_ish="origin/${branch_name}"
+    fi
+
+    # if local branch exists
+    if git branch | grep -q "${branch_name}"; then
+      git branch | grep  "${branch_name}"
+      commit_ish="${branch_name}"
+    else
+      worktree_flags="${worktree_flags} -b ${branch_name}"
+      echo worktree_flags: ${worktree_flags}
+    fi
+
+    # add worktree
+    echo git worktree add ${worktree_flags} "${worktree_work_path}" "$commit_ish"
+    if ! git worktree add ${worktree_flags} "${worktree_work_path}" "$commit_ish"; then
+      # check if branch already checked out
+      if git worktree list | grep -q "${branch_name}"; then
+        worktree_work_path=$(git worktree list | grep "${branch_name}" | awk '{ print $1 }')
+        echo "${branch_name} already checked out at ${worktree_work_path}, switching to it"
+      fi
+    fi
+  fi
+
+  # cd into the worktree
+  cd "${worktree_work_path}"
+
+  # install root deps && setup husky
+  yarn install && yarn setup-husky
+
+  # setup API
+  cd tt-analytics-api
+  for item in "misc" "localdev.env" ".envrc"; do
+    cp -r ${worktree_base_path}/tt-analytics/tt-analytics-api/${item} .
+  done
+
+  direnv allow
+  yarn install
+
+  cd "${worktree_work_path}/tt-analytics-api"
+
+  if ! tmux list-sessions | grep -q "${branch_name}"; then
+    echo "tmux new-session -s ${branch_name} -d"
+    tmux new-session -s "${branch_name}" -d
+  fi
+
+  if [[ -z "${TMUX:-}" ]]; then
+    run tmux attach -t "${branch_name}" \; \
+      split-window -h \; \
+      split-window -v \; \
+      select-pane -t 0
+  else
+    run tmux switch -t "${branch_name}"
+  fi
+}
+
+function run {
+  echo "$@"
+  "$@"
+}
+
+main "$@"
