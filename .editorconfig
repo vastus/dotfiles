@@ -12,10 +12,14 @@ trim_trailing_whitespace = true
 indent_size = 4
 indent_style = tab
 
-[*.rs]
+[*.{go,rs}]
 indent_size = 4
 indent_style = space
 
 [Makefile]
 indent_size = 4
 indent_style = tab
+
+[*.{java}]
+indent_size = 4
+indent_style = space
