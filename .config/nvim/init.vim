@@ -31,6 +31,9 @@ Plug 'tpope/vim-repeat'
 " copilot
 Plug 'github/copilot.vim'
 
+" treesitter -- better syntax highlighting
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 call plug#end()
 
 "
@@ -93,7 +96,8 @@ nmap <leader>t :Files<CR>
 " ui
 "
 
-colorscheme pablo
+" colorscheme pablo
+colorscheme default
 
 
 "
@@ -102,6 +106,34 @@ colorscheme pablo
 
 " commentary
 autocmd FileType cpp setlocal commentstring=//%s
+
+" treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  -- ensure_installed = { "c", "cpp", "lua", "vim", "help", "javascript", "python", "ruby", "typescript" },
+  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
+  ignore_install = {}, -- List of parsers to ignore installing
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    -- disable = { "c", "rust" },  -- list of language that will be disabled
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+  incremental_selection = {
+      enable = true,
+      keymaps = {
+        init_selection = "gnn",
+        node_incremental = "grn",
+        scope_incremental = "grc",
+        node_decremental = "grm",
+      },
+    },
+}
+EOF
 
 " lsp
 
@@ -133,10 +165,18 @@ endif
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-
 " show doc / type of word under cursor
+" function! ShowDocumentation()
+"   if CocAction('hasProvider', 'hover')
+"     call CocActionAsync('doHover')
+"   else
+"     call feedkeys('K', 'in')
+"   endif
+" endfunction
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
 function! ShowDocumentation()
   if CocAction('hasProvider', 'hover')
     call CocActionAsync('doHover')
@@ -144,3 +184,23 @@ function! ShowDocumentation()
     call feedkeys('K', 'in')
   endif
 endfunction
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" show all diagnostics
+nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+
+" manage extensions
+nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+
+" show commands
+nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+
+" find symbol of current document
+nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+
+" search workspace symbols
+nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
