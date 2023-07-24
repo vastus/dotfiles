@@ -62,9 +62,10 @@ export PATH="$HOME/.local/bin:$PATH"
 # common
 export LC_ALL="en_US.UTF-8"
 
-export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/tt-prod-1:$KUBECONFIG"
+# export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/tt-prod-1:$KUBECONFIG"
 
 # pyenv
+export PYENV_ROOT="$HOME/.pyenv"
 if which pyenv > /dev/null; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
@@ -75,6 +76,16 @@ if which scutil >/dev/null 2>&1 && scutil --proxy | grep proxypac.hm.com > /dev/
   export http_proxy=http://seproxy.hm.com:8080
   export https_proxy=http://seproxy.hm.com:8080
 fi
+
+# brew java
+export PATH="/opt/homebrew/Cellar/openjdk/19.0.2/bin:$PATH"
+export JAVA_HOME="/opt/homebrew/Cellar/openjdk/19.0.2"
+
+trash() {
+  mv "$@" ~/trash
+}
+
+alias rm='trash'
 
 # prompt
 autoload -Uz vcs_info
