@@ -1,7 +1,11 @@
 #!/bin/bash
 
-set -uo pipefail
+set -u
 # set -x
+
+# using -o pipefail will not work w/ `git branch -a` since it returns a
+# non-zero exit code even when branches are found
+
 
 function main {
   local branch_name="$1"
@@ -19,15 +23,17 @@ function main {
   # if no worktree already exists
   if [[ ! -d "${worktree_work_path}" ]]; then
     # if remote branch exists set commit_ish to remote branch
-    if ! git branch -a | grep -q "origin/${branch_name}"; then
+    if git branch -a | grep -q "origin/${branch_name}"; then
+      echo "found remote branch: origin/${branch_name}"
       commit_ish="origin/${branch_name}"
     fi
 
     # if local branch exists
     if git branch | grep -q "${branch_name}"; then
-      git branch | grep  "${branch_name}"
+      echo "found local branch: ${branch_name}"
       commit_ish="${branch_name}"
     else
+      echo "no remote or local branch found"
       worktree_flags="${worktree_flags} -b ${branch_name}"
       echo worktree_flags: ${worktree_flags}
     fi
@@ -51,6 +57,7 @@ function main {
 
   # setup API
   cd tt-analytics-api
+  cp ${worktree_base_path}/tt-analytics/.envrc ../
   for item in "misc" "localdev.env" ".envrc"; do
     cp -r ${worktree_base_path}/tt-analytics/tt-analytics-api/${item} .
   done
