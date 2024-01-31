@@ -107,6 +107,9 @@ colorscheme default
 " commentary
 autocmd FileType cpp setlocal commentstring=//%s
 
+" gopls
+autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+
 " treesitter
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
