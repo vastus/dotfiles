@@ -59,6 +59,9 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # stack
 export PATH="$HOME/.local/bin:$PATH"
 
+# golang
+export PATH="$HOME/go/bin:$PATH"
+
 # common
 export LC_ALL="en_US.UTF-8"
 
