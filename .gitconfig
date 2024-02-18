@@ -41,11 +41,11 @@
 
 # https://git-scm.com/book/en/v2/Git-Tools-Rerere
 [rerere]
-	enabled = true
+  enabled = true
 
 # use ssh for signing commits
 [gpg]
-	format = ssh
+  format = ssh
 
 [commit]
-	gpgsign = true
+  gpgsign = true
