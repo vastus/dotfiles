@@ -43,6 +43,14 @@
 [rerere]
   enabled = true
 
+# default sort of branch output by date modified desc
+[branch]
+	sort = -committerdate
+
+# display branches in columns (auto wrt width)
+[column]
+	ui = auto
+
 # use ssh for signing commits
 [gpg]
   format = ssh
